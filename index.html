@@ -1,56 +1,13 @@
 <html>
 <head>
-<style>
-.toggle-button label{
-  font-weight: 400;
-  cursor: pointer;
-}
-.toggle-button input[type='checkbox']{
-  opacity:0;
-  width: 0;
-  height: 0;
-}
-.toggle-button .toggle{
-    content: "";
-  display: inline-block;
-  width: 30px;
-  height: 15px;
-  background-color:#f0f0f0;
-  border-radius: 15px;
-  margin-right: 10px;
-  transition: background .3s ease;
-  vertical-align: middle;
-}
-.toggle-button .toggle:after{
-background-color:  #009688;
- left:15px;
-    content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #f1f1f1;
-  border-radius: 20px;
-  position: relative;
-  box-shadow: 0 1px 3px 1px rgba(0,0,0,.4);
-  left: -5px;
-  top: -2px;
-  transition: left .3s ease,background .3s ease,box-shadow .1s ease;
-}
-.toggle-button input:checked+.toggle:after{
-  left:15px;
-   background-color: white;
-}
-.toggle-button input:checked+.toggle{
-  background-color:green;    
-}
-</style>
+<link href="css/default.css" rel="stylesheet">
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 </head>
-<body>
-	<div class="toggle-button">
-<label>
-Feature
-<input type="checkbox" checked=""><span class="toggle"></span>
-</label>
-</div>
+<body ng-app="app">
+  <div ng-controller="Controller"> 
+	<div toggle ng-model="check"></div>
+  <div>{{check}}</div>
+  </div>
 </body>
 </html>
